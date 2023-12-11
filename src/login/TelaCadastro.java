@@ -20,7 +20,7 @@ import java.awt.event.ActionListener;
 
 
 public class TelaCadastro extends JFrame {
-    // private final JPanel tela;
+
     private final JTextField txtNome;
     private final JTextField txtUsuario;
     private final JPasswordField passSenha;

@@ -13,6 +13,7 @@ public class Usuario {
 
     private boolean resultCadastro;
     private boolean resultExcluir;
+    private boolean resultAltera;
 
 
     public String getUsuario() {
@@ -92,6 +93,21 @@ public class Usuario {
         }
         banco.FecharConexao();
         return resultExcluir;
+    }
+    
+     public boolean AlteraUsuario(String editUser, String newUserName, String newNickName, String newPassWord) {
+        Conexao banco = new Conexao();
+        try{
+            banco.AbrirConexao();
+            banco.stmt = banco.con.createStatement();
+            banco.stmt.execute("update usuario set nome = '" + newUserName +"', apelido = '" + newNickName + "', senha = '" + newPassWord + "' where apelido = " + editUser);
+            resultAltera = true;
+        } catch (Exception ec) {
+            System.out.println("Erro ao inserir usuario " + ec.getMessage());
+            resultAltera = true;
+        }
+        banco.FecharConexao();
+        return resultAltera;
     }
     
 }

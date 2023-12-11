@@ -62,14 +62,24 @@ public class TelaMenu extends JFrame{
             }
         });
         
+        btnAlterar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                TelaAlterar tela = new TelaAlterar(user);
+                tela.AbreTela();
+                dispose();
+            }
+        });
+        
         btnExcluir.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 int resp = JOptionPane.showConfirmDialog(null, "Deseja realmente se excluir?", "Atenção", JOptionPane.YES_NO_OPTION);
 
-                System.out.println(resp);
                 if(resp == 0) {
                     Usuario usu = new Usuario();
+                    TelaLogin t = new TelaLogin();
                     usu.ExcluirUsuario(user);
+                    t.AbreTela();
+                    dispose();
                 }
             }
         });
