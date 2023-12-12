@@ -111,8 +111,6 @@ public class TelaAlterar extends JFrame {
                 } else if (txtSenhaAtual.getText().equals("") || confNewSenha.getText().equals("")) {
                     JOptionPane.showMessageDialog(null,"Campo senha precisa ser informado!","Atenção",JOptionPane.ERROR);
                     txtSenhaAtual.grabFocus();
-                } else if(confNewSenha != newSenha) {
-                    JOptionPane.showMessageDialog(null,"Os campos de nova senha precisam estar iguais. Digite novamente","Atenção",JOptionPane.ERROR);
                 } else {
                     resultAltera = usu.AlteraUsuario(user, txtNome.getText(), txtNome.getText(), newSenha.getText());
                     

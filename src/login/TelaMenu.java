@@ -38,9 +38,6 @@ public class TelaMenu extends JFrame{
         lblIdentificacao.setFont(new Font("Arial", Font.BOLD, 19));
         panelTela.add(lblIdentificacao);
 
-
-
-
         JButton btnVoltar = new JButton("Voltar");
         btnVoltar.setBounds(350, 150, 100, 25);
         panelTela.add(btnVoltar);

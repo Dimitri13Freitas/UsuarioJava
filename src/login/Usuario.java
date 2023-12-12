@@ -85,10 +85,10 @@ public class Usuario {
         try{
             banco.AbrirConexao();
             banco.stmt = banco.con.createStatement();
-            banco.stmt.execute("DELETE FROM usuario WHERE apelido = " + user);
+            banco.stmt.execute("DELETE FROM usuario WHERE apelido = '" +  user + "'");
             resultExcluir = true;
         } catch (Exception ec) {
-            System.out.println("Erro ao inserir usuario " + ec.getMessage());
+            System.out.println("Erro ao apagar usuario " + ec.getMessage());
             resultExcluir = true;
         }
         banco.FecharConexao();
@@ -100,7 +100,7 @@ public class Usuario {
         try{
             banco.AbrirConexao();
             banco.stmt = banco.con.createStatement();
-            banco.stmt.execute("update usuario set nome = '" + newUserName +"', apelido = '" + newNickName + "', senha = '" + newPassWord + "' where apelido = " + editUser);
+            banco.stmt.execute("update usuario set nome = '" + newUserName +"', apelido = '" + newNickName + "', senha = '" + newPassWord + "' where apelido = '" + editUser + "'");
             resultAltera = true;
         } catch (Exception ec) {
             System.out.println("Erro ao inserir usuario " + ec.getMessage());
